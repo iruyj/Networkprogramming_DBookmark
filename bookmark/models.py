@@ -6,3 +6,6 @@ class Bookmark(models.Model):
     url = models.URLField()
 
 
+    # 목록을 보여줄 때 object(1) 이렇게 보이는 게 아니라 이름으로 보여짐
+    def __str__(self):
+        return f'{self.name} : {self.url}'
