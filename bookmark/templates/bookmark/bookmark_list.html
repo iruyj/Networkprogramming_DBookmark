@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark List</title>
+    <style type="text/css">
+        td,tr,th{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th{
+            background-color: #ffeeee;
+        }
+    </style>
+</head>
+<body>
+<table >
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>url</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in bookmark_list %}
+            <tr>
+                <td>{{ forloop.counter}}</td>
+                <td>{{ book.name }}</td>
+                <td><a href="{{ book.url }}">{{ book.url }}</a> </td>
+                <td><a href="#">수정</a> </td>
+                <td><a href="#">삭제</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
