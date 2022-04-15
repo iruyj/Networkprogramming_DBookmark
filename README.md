@@ -21,4 +21,6 @@
    4. bookmark/views BookmarkListView
    5. urls, bookmark/urls bookmark:list
    6. templates bookmark_list.html
-   7. 
+   7. bookmark/views BookmarkCreateView
+   8. urls, bookmark/urls bookmark:add
+   9. templates bookmark_create.html
