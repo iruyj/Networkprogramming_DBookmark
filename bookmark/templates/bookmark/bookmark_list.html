@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Bookmark List</title>
-    <style type="text/css">
-        td,tr,th{
-            border: 1px solid black;
-            padding: 10px;
-        }
-        th{
-            background-color: #ffeeee;
-        }
-    </style>
+{#    <style type="text/css">#}
+{#        table,td,th{#}
+{#            border: 1px solid black;#}
+{#            border-collapse: collapse;#}
+{#            padding: 10px;#}
+{#        }#}
+{#        body{#}
+{#            display: flex;#}
+{#            flex-direction:column;#}
+{#            justify-content: center;#}
+{#            align-items: center;#}
+{#            margin-top: 10%;#}
+{#        }#}
+{#        th{#}
+{#            background-color: #ffeeee;#}
+{#        }#}
+{#    </style>#}
 </head>
 <body>
+{# 주소 앞에 /가 붙으면 절대주소, /안붙으면 상대주소(현재 url 뒤에 붙는다)#}
+<a href="{% url 'bookmark:add' %}">Add Bookmark</a>
 <table >
     <thead>
         <tr>
             <th>#</th>
-            <th>name</th>
-            <th>url</th>
-            <th>edit</th>
-            <th>delete</th>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -30,11 +40,12 @@
                 <td>{{ forloop.counter}}</td>
                 <td>{{ book.name }}</td>
                 <td><a href="{{ book.url }}">{{ book.url }}</a> </td>
-                <td><a href="#">수정</a> </td>
-                <td><a href="#">삭제</a></td>
+                <td><a href="#" style="color:blueviolet">수정</a> </td>
+                <td><a href="#" style="color:red">삭제</a></td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
+
 </body>
 </html>
