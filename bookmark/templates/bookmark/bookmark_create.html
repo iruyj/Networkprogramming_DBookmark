@@ -5,7 +5,7 @@
     <title>Bookmark List</title>
     </head>
 <body>
-<form action="#" method="get">
+<form action="{% url 'bookmark:add' %}" method="post">
     {% csrf_token %}
     {{ form.as_ul }}
     <button type="submit">ADD</button>

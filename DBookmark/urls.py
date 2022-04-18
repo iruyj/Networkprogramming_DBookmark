@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('bookmark/',include('bookmark.urls')),
-    path('admin/', admin.site.urls),
+    path('adminht/', admin.site.urls),
+
 ]

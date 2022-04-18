@@ -15,6 +15,7 @@ class BookmarkCreateView(CreateView):
     fields = ['name','url']     # '__all__' 로 쓸수도 있다. 생성할 필드들
     template_name_suffix = '_create'# bookmark_form.html -> bookmark_create.html
     success_url = reverse_lazy('bookmark:list')     # 클릭하면이동할 화면
-    
+
+
     
 
