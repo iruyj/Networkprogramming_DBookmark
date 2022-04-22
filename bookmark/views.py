@@ -23,7 +23,8 @@ class BookmarkUpdateView(UpdateView):
     model = Bookmark
     fields = ['name','url']     # '__all__'
     template_name_suffix = '_update'    # bookmark_update.html
-    success_url = reverse_lazy('bookmark:list')
+    # success_url 없으면 해당 model의 get_absolute_url() 호출
+    # success_url = reverse_lazy('bookmark:list')
 
 
 
