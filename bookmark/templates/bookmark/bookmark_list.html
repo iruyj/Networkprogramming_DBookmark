@@ -19,11 +19,15 @@
 {#        th{#}
 {#            background-color: #ffeeee;#}
 {#        }#}
+{#        a{#}
+{#            text-decoration:none#}
+{#        }#}
 {#    </style>#}
 </head>
 <body>
 {# 주소 앞에 /가 붙으면 절대주소, /안붙으면 상대주소(현재 url 뒤에 붙는다)#}
 <a href="{% url 'bookmark:add' %}">Add Bookmark</a>
+<br>
 <table >
     <thead>
         <tr>
@@ -38,9 +42,10 @@
         {% for book in bookmark_list %}
             <tr>
                 <td>{{ forloop.counter}}</td>
+                {#  pk == id 글자만 다른거임(id가 최신)        #}
                 <td><a href="{% url 'bookmark:detail' pk=book.pk %}">{{ book.name }}</a></td>
                 <td><a href="{{ book.url }}" target="_blank">{{ book.url }}</a> </td>
-                <td><a href="#" style="color:blueviolet">수정</a> </td>
+                <td><a href="{% url 'bookmark:edit' pk=book.id %}" style="color:blueviolet">수정</a> </td>
                 <td><a href="#" style="color:red">삭제</a></td>
             </tr>
         {% endfor %}
