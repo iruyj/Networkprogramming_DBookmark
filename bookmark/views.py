@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from bookmark.models import Bookmark
 
 # 이 클래스는 자동으로 html파일을 연동시키는데 디비의 모든 내용을 연결해 표시해준다.
@@ -25,6 +25,10 @@ class BookmarkUpdateView(UpdateView):
     template_name_suffix = '_update'    # bookmark_update.html
     # success_url 없으면 해당 model의 get_absolute_url() 호출
     # success_url = reverse_lazy('bookmark:list')
+
+class BookmarkDeleteView(DeleteView):
+    model = Bookmark
+    success_url = reverse_lazy('bookmark:list')
 
 
 
