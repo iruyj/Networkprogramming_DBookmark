@@ -46,7 +46,7 @@
                 <td><a href="{% url 'bookmark:detail' pk=book.pk %}">{{ book.name }}</a></td>
                 <td><a href="{{ book.url }}" target="_blank">{{ book.url }}</a> </td>
                 <td><a href="{% url 'bookmark:edit' pk=book.id %}" style="color:blueviolet">수정</a> </td>
-                <td><a href="#" style="color:red">삭제</a></td>
+                <td><a href="{% url 'bookmark:delete' pk=book.id %}" style="color:red">삭제</a></td>
             </tr>
         {% endfor %}
     </tbody>
