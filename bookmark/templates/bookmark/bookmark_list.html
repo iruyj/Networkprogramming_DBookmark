@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bookmark List</title>
-{#    <style type="text/css">#}
-{#        table,td,th{#}
-{#            border: 1px solid black;#}
-{#            border-collapse: collapse;#}
-{#            padding: 10px;#}
-{#        }#}
-{#        body{#}
-{#            display: flex;#}
-{#            flex-direction:column;#}
-{#            justify-content: center;#}
-{#            align-items: center;#}
-{#            margin-top: 10%;#}
-{#        }#}
-{#        th{#}
-{#            background-color: #ffeeee;#}
-{#        }#}
-{#        a{#}
-{#            text-decoration:none#}
-{#        }#}
-{#    </style>#}
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Bookmark List {% endblock %}
+{% block content %}
 {# 주소 앞에 /가 붙으면 절대주소, /안붙으면 상대주소(현재 url 뒤에 붙는다)#}
 <a href="{% url 'bookmark:add' %}">Add Bookmark</a>
 <br>
@@ -51,6 +27,4 @@
         {% endfor %}
     </tbody>
 </table>
-
-</body>
-</html>
+{% endblock %}

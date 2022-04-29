@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>delete Bookmark</title>
-</head>
-<body>
+{% extends 'bookmark' %}
+{% block title %}delete Bookmark{% endblock %}
+{% block content %}
 <form action="" method="post">
     {% csrf_token %}
     북마크 {{ bookmark }} 진짜 지우기
@@ -12,5 +8,4 @@
     <input type="button" value="그냥안함" onclick="history.back();">
 {#    history.boack() : 뒤로가기 #}
 </form>
-</body>
-</html>
+{% endblock %}
