@@ -1,11 +1,13 @@
-{% extends 'bookmark' %}
+{% extends 'base.html' %}
 {% block title %}delete Bookmark{% endblock %}
 {% block content %}
 <form action="" method="post">
     {% csrf_token %}
-    북마크 {{ bookmark }} 진짜 지우기
-    <input type="submit" value="찐삭">
-    <input type="button" value="그냥안함" onclick="history.back();">
+    <div class="alert alert-danger">
+    북마크 {{ bookmark }} 진짜 지우기</div>
+    <br>
+    <input type="submit" class="btn btn-danger" value="찐삭">
+    <input type="button" class="btn btn-primary" value="그냥안함" onclick="history.back();">
 {#    history.boack() : 뒤로가기 #}
 </form>
 {% endblock %}
