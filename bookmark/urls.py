@@ -29,9 +29,17 @@ urlpatterns = [
 
 # 다익스트라 함수
     # q = []
-    # start 세팅하기
+    # start 세팅하기 : distance[start]=0
     # heapq.heappush(q,(0, start)
 
     # while q:
         # 가져오기 : dist, now = heapq.heappop(q)
-        #
+        # 처리했는지 if : distance[now] < dist
+            # 했으면 continue
+            
+        # 현재 노드와 인접한 노드들 거리 처리하기
+        # for i in graph[now] : 인접한 것들 모두 가져오기
+            # cost = dist + i[1] : 현재노드까지거리 +  현재에서 글로 가는 거리
+            # cost < distance[i[0]] : 더 적으면
+                # distance[i[0]] = cost
+                # heapq.heappush(q, (cost, i[0])
