@@ -14,7 +14,7 @@ class RegisterForm(UserCreationForm):
     class Meta(UserCreationForm):
         fields = UserCreationForm.Meta.fields + ('email',) # ('username', 'email',)
 
-    def save(self):
+    def save(self, **kwargs):
         user = super().save() # user를 먼저 저장하기
         new_profile = Profile.objects.create(
             user=user,

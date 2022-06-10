@@ -23,6 +23,7 @@ from bookmark.views import BookmarkListView
 urlpatterns = [
     path('',include('bookmark.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:
