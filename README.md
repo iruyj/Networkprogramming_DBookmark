@@ -65,4 +65,5 @@
   - accounts/templates/accounts login, login_fail
     - bookmark/templates/bookmark login, logout
   - bookmark/views BookmarkListView get_queryset()
-  bookmarkCreateView get_initial()
+  BookmarkCreateView get_initial()
+    - bookmark/templates/bookmark_create profile X     

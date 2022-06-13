@@ -3,7 +3,9 @@
 {% block content %}
 <form action="{% url 'bookmark:add' %}" method="post">
     {% csrf_token %}
-    {{ form.as_ul }}
+    {{ form.profile.as_hidden }}
+    <p>{{ form.name.lable_tag }} {{ form.name }}</p>
+    <p>{{ form.url.lable_tag }} {{ form.url }}</p>
 
     <button type="submit" class="badge-success">ADD</button>
 </form>
