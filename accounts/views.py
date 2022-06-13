@@ -13,8 +13,7 @@ def register(request):
             return render(request, 'accounts/register_done.html', {'profile':profile})
     else:                        # 처음 빈 폼 화면
         form = RegisterForm()
-        return render(request, 'accounts/register.html',{'form':form})
-
+    return render(request, 'accounts/register.html',{'form':form})
 
 def my_login(request):
     if request.method == 'POST':
@@ -25,9 +24,10 @@ def my_login(request):
         if user is not None:
             login(request,user)
             return redirect('bookmark:list')
+        return render(request, 'accounts/login_fail.html')
     else:
         form = LoginForm()
-        return render(request, 'accounts/login_html', {'form':form})
+        return render(request, 'accounts/login.html', {'form':form})
 
 def my_logout(request):
     logout(request)
