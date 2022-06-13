@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.contrib.auth import logout, authenticate, login
+from django.shortcuts import render, redirect
 
 # Create your views here.
-from accounts.forms import RegisterForm
+from accounts.forms import RegisterForm, LoginForm
 
 
 def register(request):
@@ -13,3 +14,21 @@ def register(request):
     else:                        # 처음 빈 폼 화면
         form = RegisterForm()
         return render(request, 'accounts/register.html',{'form':form})
+
+
+def my_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username= username, password=password)
+        if user is not None:
+            login(request,user)
+            return redirect('bookmark:list')
+    else:
+        form = LoginForm()
+        return render(request, 'accounts/login_html', {'form':form})
+
+def my_logout(request):
+    logout(request)
+    return redirect('bookmark:list')
