@@ -4,6 +4,7 @@
 <form action="{% url 'bookmark:add' %}" method="post">
     {% csrf_token %}
     {{ form.as_ul }}
+
     <button type="submit" class="badge-success">ADD</button>
 </form>
 {% endblock %}
