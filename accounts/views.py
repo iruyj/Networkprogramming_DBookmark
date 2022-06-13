@@ -9,7 +9,7 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             profile = form.save()
-            return render(request, 'account/templates/accounts/register_done.html', {'profile':profile})
+            return render(request, 'accounts/register_done.html', {'profile':profile})
     else:                        # 처음 빈 폼 화면
         form = RegisterForm()
         return render(request, 'accounts/register.html',{'form':form})
